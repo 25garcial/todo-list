@@ -18,7 +18,7 @@ function makeAToDo() {
     toDo.appendChild(toDoRemoveButton)
     toDoRemoveButton.addEventListener("click", function(){
         this.parentElement.remove()
-        
+        data[`project${projectCount}`].toDos-=1
         })
     this.parentElement.appendChild(toDo)
 }
@@ -28,8 +28,8 @@ function createAddToDoButton() {
     addToDoButton.textContent = "+"
     addToDoButton.addEventListener("click", function(){
         makeAToDo();
-        data[`project${projectCount}`].toDos+=1
-        console.log(data)
+        data[`project${projectCount}`].toDos+=1;
+        console.log(data);
     })
     return addToDoButton
 }
@@ -41,8 +41,7 @@ function makeProject() {
     projectBox.id=data[`project${projectCount}`].title
     title.textContent=projectBox.id
     projectBox.appendChild(title)
-
-  
+    console.log(" ")
     projectBox.classList.add("project")
     projectBox.appendChild(createAddToDoButton())
   
