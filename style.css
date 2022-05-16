@@ -1,10 +1,10 @@
 .container{
     background-color: lightcyan;
     position: fixed;
-    left:0;
-    right:0;
-    bottom:0;
-    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
 }
 .project{
     background-color: cyan;
@@ -12,9 +12,12 @@
     height: 40%;
     border-style:solid;
     border-width: 2px;
+    overflow:auto;
     padding-bottom: 5px;
+    display:inline-block;
 }
 .toDo{
+  
     background-color:lightgray;
     border-style:solid;
     border-width:1px;
@@ -22,5 +25,5 @@
     margin-bottom: 2px;
 }
 .toDoRemoveButton{
-    float:right;
+  float: right;
 }
