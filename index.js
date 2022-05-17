@@ -2,6 +2,8 @@ var container = document.querySelector(".container")
 const projectButton = document.querySelector(".toDoMaker")
 projectButton.addEventListener("click", makeProject)
 let projectCount = 0
+const crayon = document.createElement("img");
+crayon.src = "crayon.png"
 let data = {}
 
 function Project() {
@@ -57,7 +59,8 @@ function makeProject() {
   let title = document.createElement("span")
   projectBox.id = data[`project${projectCount}`].title
   title.textContent = projectBox.id
-  projectBox.appendChild(title)
+  title.append(crayon)
+   projectBox.appendChild(title)
 
   projectBox.classList.add("project")
   projectBox.appendChild(createAddToDoButton())
