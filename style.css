@@ -24,7 +24,24 @@
     border-width:1px;
     height: 10%;
     margin-bottom: 2px;
+    transform:translate(0,50px)
 }
 .toDoRemoveButton{
   float: right;
+}
+input{
+    position:absolute;
+    
+}
+input.submit{
+    transform:translate(-106%)
+}
+input.title{
+    transform: translate(-99%);
+}
+.title{
+    position:fixed;
+}
+.addToDoButton{
+    float:right;
 }
