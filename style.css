@@ -15,7 +15,7 @@
     border-width: 2px;
     overflow:auto;
     padding-bottom: 5px;
-    display:inline-block;
+    margin:50px;
 }
 .toDo{
   
@@ -24,24 +24,31 @@
     border-width:1px;
     height: 10%;
     margin-bottom: 2px;
-    transform:translate(0,50px)
+    transform:translate(0,50px);
 }
 .toDoRemoveButton{
   float: right;
 }
 input{
-    position:absolute;
+    
+    position:relative;
     
 }
+
 input.submit{
-    transform:translate(-106%)
+    transform:translate(-106%);
+    position:absolute;
 }
 input.title{
     transform: translate(-99%);
 }
 .title{
-    position:fixed;
+    position:relative;
 }
 .addToDoButton{
     float:right;
+}
+.project::-webkit-scrollbar {
+    width: 0px;
+
 }

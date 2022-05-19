@@ -20,20 +20,21 @@ function makeAToDo(parent) {
   toDoRemoveButton.classList.add("toDoRemoveButton")
   toDoRemoveButton.id = projectCount - 1
   toDo.classList.add("toDo")
-  let text = document.createElement("A")
+  let text = document.createElement("a")
   text.textContent = "To Do: "
 
-  text.addEventListener("click", function () { let input = document.createElement("input");
-   this.parentElement.append(input);
+  text.addEventListener("click", function () {
+    let input = document.createElement("input");
+    this.parentElement.append(input);
     input.value = this.textContent;
-    this.textContent=""
-     let submit = document.createElement("input")
-     submit.type = "submit";
-     submit.classList.add("submit")
-   this.parentElement.append(submit);
-   submit.addEventListener("click", function(){text.textContent=input.value;input.remove(); this.remove()})
-     }
-    )
+    this.textContent = ""
+    let submit = document.createElement("input")
+    submit.type = "submit";
+    submit.classList.add("submit")
+    this.parentElement.append(submit);
+    submit.addEventListener("click", function () { text.textContent = input.value; input.remove(); this.remove() })
+  }
+  )
   toDo.appendChild(text)
   toDoRemoveButton.addEventListener("click", function () {
     this.parentElement.remove();
@@ -69,21 +70,24 @@ function makeProject() {
   let title = document.createElement("span")
   title.classList.add("title")
 
-  title.addEventListener("click", function () { 
+  title.addEventListener("click", function () {
     let input = document.createElement("input");
-   this.parentElement.append(input);
+    this.parentElement.insertBefore(input, this.parentElement.firstChild)
+
     input.value = this.textContent;
-    this.textContent=""
-     let submit = document.createElement("input")
-     submit.type = "submit";
-     submit.classList.add("submit")
-     submit.classList.add("title")
-   this.parentElement.append(submit);
-   submit.addEventListener("click", function(){
-     title.textContent=input.value;
-     input.remove();
-    this.remove()})}
-    )
+    this.textContent = ""
+    let submit = document.createElement("input")
+    submit.type = "submit";
+    submit.classList.add("submit")
+    submit.classList.add("title")
+    this.parentElement.insertBefore(submit, this.parentElement.firstChild)
+    submit.addEventListener("click", function () {
+      title.textContent = input.value;
+      input.remove();
+      this.remove()
+    })
+  }
+  )
   projectBox.id = data[`project${projectCount}`].title
   title.textContent = projectBox.id
 
